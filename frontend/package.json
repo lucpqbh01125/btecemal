@@ -1,0 +1,37 @@
+{
+  "name": "email-analyzer-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint --no-lint",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "apexcharts": "^4.0.0",
+    "axios": "^1.6.0",
+    "bootstrap": "^4.6.2",
+    "bootstrap-vue": "^2.23.1",
+    "core-js": "^3.35.0",
+    "vue": "^2.7.16",
+    "vue-apexcharts": "^1.6.2",
+    "vue-router": "^3.6.5",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "@vue/cli-plugin-babel": "~5.0.8",
+    "@vue/cli-plugin-eslint": "~5.0.8",
+    "@vue/cli-plugin-router": "~5.0.8",
+    "@vue/cli-plugin-vuex": "~5.0.8",
+    "@vue/cli-service": "~5.0.8",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.19.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
