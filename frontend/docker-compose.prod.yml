@@ -1,0 +1,12 @@
+services:
+  frontend-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: email_analyzer_frontend
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      - VUE_APP_API_URL=http://localhost:8000/api
+      - NODE_ENV=production 
