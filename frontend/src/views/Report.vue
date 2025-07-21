@@ -74,7 +74,8 @@
       </b-card>
 
       <b-card>
-        <h3 class="mb-4">Các loại lừa đảo phổ biến</h3>
+        <h3 class="mb-4">Thống Kê Phân Loại Email Lừa Đảo Tại Việt Nam
+</h3>
         <b-table
           :items="commonThreats"
           :fields="threatFields"

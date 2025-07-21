@@ -10,3 +10,4 @@ Tạo .env copy từ .env.dev thay đổi thông tin
 cd backend
 - ./run-dev.sh
 ```
+chmod +x run-dev.sh

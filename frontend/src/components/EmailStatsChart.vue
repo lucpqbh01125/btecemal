@@ -14,7 +14,7 @@
       <b-tab title="Xu hướng">
         <div v-if="stats.recent_trend && stats.recent_trend.length > 0" class="chart-container">
           <apexchart
-            type="area"
+            type="bar"
             height="320"
             :options="trendChartOptions"
             :series="trendChartSeries"
@@ -141,7 +141,7 @@ export default {
     trendChartOptions() {
       return {
         chart: {
-          type: 'area',
+          type: 'bar',
           height: 320,
           fontFamily: 'Roboto, sans-serif',
           toolbar: {
@@ -149,32 +149,46 @@ export default {
           },
           zoom: {
             enabled: false
+          },
+          title: {
+            text: 'Xu hướng email theo ngày',
+            align: 'center',
+            style: {
+              fontSize: '16px',
+              fontWeight: 'bold'
+            }
           }
         },
         colors: ['#28a745', '#ffc107', '#6c757d', '#dc3545', '#17a2b8'],
         dataLabels: {
           enabled: false
         },
-        stroke: {
-          curve: 'smooth',
-          width: 2
-        },
-        fill: {
-          type: 'gradient',
-          gradient: {
-            shadeIntensity: 1,
-            opacityFrom: 0.7,
-            opacityTo: 0.3,
-            stops: [0, 90, 100]
-          }
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: '55%',
+            endingShape: 'rounded'
+          },
         },
         xaxis: {
           categories: this.stats.recent_trend ? this.stats.recent_trend.map(day => this.formatDate(day.date)) : [],
+          title: {
+            text: 'Ngày',
+            style: {
+              fontSize: '12px'
+            }
+          },
           tooltip: {
             enabled: false
           }
         },
         yaxis: {
+          title: {
+            text: 'Số lượng email',
+            style: {
+              fontSize: '12px'
+            }
+          },
           labels: {
             formatter: (value) => {
               return Math.floor(value);
@@ -188,6 +202,7 @@ export default {
         },
         tooltip: {
           shared: true,
+          intersect: false,
           y: {
             formatter: (value) => {
               return `${value} email`;
